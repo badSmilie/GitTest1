@@ -25,5 +25,15 @@ namespace MultipleViews.Views
         {
             InitializeComponent();
         }
+
+        private void StackPanel_Click(object sender, RoutedEventArgs e)
+        {
+            tbFName.Text = "Vorname send"; // bubbled
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            tbName.Text = "Name send";
+        }
     }
 }
