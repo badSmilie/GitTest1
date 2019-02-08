@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MultipleViews.Views"
              xmlns:viewModel="clr-namespace:MultipleViews.ViewModels"
+             xmlns:control="clr-namespace:MultipleViews.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="LightBlue">
@@ -15,6 +16,7 @@
                 <TextBlock Name="tbEmail" Text="Email" />
             </StackPanel>
             <Button Content="Send" Click="Button_Click" Margin="0,10,0,0" Width="70" HorizontalAlignment="Left"/>
+            <control:MyCustomControl Click="MyCustomControl_Click" Margin="0,10,0,0" Width="70" HorizontalAlignment="Left"/>
         </StackPanel>
     </Grid>
 </UserControl>

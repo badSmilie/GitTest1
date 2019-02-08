@@ -35,5 +35,10 @@ namespace MultipleViews.Views
         {
             tbName.Text = "Name send";
         }
+
+        private void MyCustomControl_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("It is the custom routed event of your custom control");
+        }
     }
 }
