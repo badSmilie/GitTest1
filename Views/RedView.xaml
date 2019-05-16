@@ -6,7 +6,16 @@
              xmlns:local="clr-namespace:MultipleViews.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <XmlDataProvider x:Key="xmldata" XPath="Resteraunts" Source="..\Data\restaurants.xml" />
+    </UserControl.Resources>
     <Grid Background="Red">
-            
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Background="Gainsboro">
+            <ListBox ItemsSource="{Binding Source={StaticResource xmldata}, XPath=*[@Type\=\'Mexican\']}"/>
+            <StackPanel Orientation="Vertical" Width="100">
+                <Slider Width="50" Name="Slider"/>
+                <TextBox Name="range" Text="{Binding ElementName=Slider, Path=Value}" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

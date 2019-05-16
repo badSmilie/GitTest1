@@ -21,27 +21,21 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="100px"/>
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30px"/>
         </Grid.RowDefinitions>
 
-        <DockPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Background="Gray">
+        <DockPanel Grid.Row="0" Grid.Column="0" Background="Gray" Grid.RowSpan="2">
             <StackPanel>
                 <Button Content="Red View" Command="{Binding RedCommand}" />
                 <Button Content="Blue View" Command="{Binding BlueCommand}" />
                 <Button Content="Orange View" Command="{Binding OrangeCommand}" />
             </StackPanel>
         </DockPanel>
-        <ContentControl Content="{Binding SelectedViewModel}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5" />
+        <ContentControl Content="{Binding SelectedViewModel}" Grid.Row="0" Grid.Column="1" />
     </Grid>
 </Window>

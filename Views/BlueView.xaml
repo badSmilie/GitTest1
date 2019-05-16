@@ -8,15 +8,31 @@
              xmlns:control="clr-namespace:MultipleViews.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="textStyleTextBox" TargetType="TextBox">
+            <Setter Property="Foreground" Value="#333333" />
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={RelativeSource Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <Grid Background="LightBlue">
         <StackPanel ButtonBase.Click="StackPanel_Click" Margin="10,10,0,0">
             <StackPanel>
-                <TextBlock Name="tbName" Text="Name" />
+                <StackPanel Orientation="Horizontal"> 
+                    <TextBlock Name="tbName" Text="Name" HorizontalAlignment="Left" />
+                    <TextBox Width="60" TextWrapping="Wrap" Text="{Binding Path=Person.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, Mode=TwoWay}" HorizontalAlignment="Left" Margin="80,0,0,0" Style="{StaticResource textStyleTextBox}" />
+                </StackPanel>
                 <TextBlock Name="tbFName" Text="Vorname" />
                 <TextBlock Name="tbEmail" Text="Email" />
             </StackPanel>
             <Button Content="Send" Click="Button_Click" Margin="0,10,0,0" Width="70" HorizontalAlignment="Left"/>
-            <control:MyCustomControl Click="MyCustomControl_Click" Margin="0,10,0,0" Width="70" HorizontalAlignment="Left"/>
+            <control:MyCustomControl CustomClick="MyCustomControl_Click" Margin="0,10,0,0" Width="70" HorizontalAlignment="Left"/>
+            <Button Content="ShowDate" Command="{Binding DateCommand}" Margin="0,10,0,0" Width="70" HorizontalAlignment="Left" />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -60,14 +60,22 @@ namespace MultipleViews.Controls
             if (button != null)
                 button.Click += Button_Click;
         }
+
+        /// <summary>
+        /// The btnRaiseEvent button was clicked, so raise the
+        /// <see cref="ClickEvent">ClickEvent
+        /// </see> RoutedEvent
+        /// </summary>
         void Button_Click(object sender, RoutedEventArgs e)
         {
             RaiseClickEvent();
         }
 
-        public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(MyCustomControl));
+        //The actual event routing
+        public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("CustomClick", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(MyCustomControl));
 
-        public event RoutedEventHandler Click
+        //add remove handlers
+        public event RoutedEventHandler CustomClick
         {
             add { AddHandler(ClickEvent, value); }
             remove { RemoveHandler(ClickEvent, value); }

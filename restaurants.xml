@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"  ?> 
+<Resteraunts xmlns="">
+  <Resteraunt Type="Meat">
+    <Name>The MeatHouse</Name>
+    <Phone>01237 78516</Phone>
+    <email>yada@here.com</email>
+  </Resteraunt>
+  <Resteraunt Type="Veggie">
+    <Name>VegHead</Name>
+    <Phone>99999</Phone>
+    <email>mmm-vegies@here.com</email>
+  </Resteraunt>
+  <Resteraunt Type="Mexican">
+    <Name>Mexican't (El Mariachi)</Name>
+    <Phone>464654654</Phone>
+    <email>mex@here.com</email>
+  </Resteraunt>  
+</Resteraunts>
